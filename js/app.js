@@ -1,3 +1,7 @@
+let totalCarrinho = 0;
+document.getElementById('lista-produtos').innerHTML = '';
+document.getElementById('valor-total').innerHTML = 'R$ 0';
+
 function adicionar(){
     let produto = document.getElementById('produto').value;
     let nomeProduto = produto.split('-')[0];
@@ -10,15 +14,8 @@ function adicionar(){
           <span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${valorProduto}</span>
         </section>`;
     
-    //let carrinho = document.getElementById('valor-total').textContent;
-//let valorCarrinho = parseInt(carrinho.split('R$')[1]);
-    //let valorTotal = valorCarrinho + resultado;
-    //document.getElementById('valor-total').innerHTML = valorTotal
-
-    //let carrinho = document.getElementById('valor-total');
-   // carrinho.innerHTML = carrinho.innerHTML +  `<span class="texto-azul" id="valor-total">${resultado}</span>`;
-
-    //console.log(carrinho);
-    
-    
+    totalCarrinho = totalCarrinho + resultado;
+    let carrinho = document.getElementById('valor-total');
+    carrinho.innerHTML = `<span class="texto-azul" id="valor-total">R$${totalCarrinho}</span>`;
+ 
 }
