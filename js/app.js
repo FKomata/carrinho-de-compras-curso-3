@@ -17,5 +17,13 @@ function adicionar(){
     totalCarrinho = totalCarrinho + resultado;
     let carrinho = document.getElementById('valor-total');
     carrinho.innerHTML = `<span class="texto-azul" id="valor-total">R$${totalCarrinho}</span>`;
+
+    document.getElementById('quantidade').value = '';
+
  
+}
+
+function limpar(){
+    document.getElementById('valor-total').innerHTML = 'R$ 0';
+    document.getElementById('lista-produtos').innerHTML = '';
 }
