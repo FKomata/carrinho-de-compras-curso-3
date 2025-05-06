@@ -1,6 +1,5 @@
-let totalCarrinho = 0;
-document.getElementById('lista-produtos').innerHTML = '';
-document.getElementById('valor-total').innerHTML = 'R$ 0';
+let totalCarrinho
+limpar();
 
 function adicionar(){
     let produto = document.getElementById('produto').value;
@@ -20,10 +19,21 @@ function adicionar(){
 
     document.getElementById('quantidade').value = '';
 
+    if(quantidade == 0){
+        alert('a quantidade do item está invalida');
+        limpar()
+    }
+
+    if(quantidade <= 0){
+        alert('a quantidade do item está invalida');
+        limpar()
+    }
+
  
 }
 
 function limpar(){
     document.getElementById('valor-total').innerHTML = 'R$ 0';
     document.getElementById('lista-produtos').innerHTML = '';
+    totalCarrinho = 0;
 }
